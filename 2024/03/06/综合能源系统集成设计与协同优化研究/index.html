@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.css">
     <title>
         
-        综合能源系统集成设计与协同优化研究｜undefined
+        综合能源系统集成设计与协同优化研究综述阅读｜undefined
         
     </title>
 
@@ -38,7 +38,11 @@
     
 <link rel="stylesheet" href="/css/syntax.css">
 
-<meta name="generator" content="Hexo 7.1.1"></head>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.1.1"></head>
 
 <style>
 
@@ -151,9 +155,7 @@
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
                 <div class="post-heading">
-                    <h1>综合能源系统集成设计与协同优化研究</h1>
-                    
-                    <h2 class="subheading">记录2023-2024学年开放实验研究进展</h2>
+                    <h1>综合能源系统集成设计与协同优化研究综述阅读</h1>
                     
                     <span class="meta">
                          作者 Ethan Wang
@@ -176,7 +178,7 @@
     </div>
     <div class="post-title-haojen">
         <span>
-            综合能源系统集成设计与协同优化研究
+            综合能源系统集成设计与协同优化研究综述阅读
         </span>
     </div>
 </header>
@@ -187,28 +189,55 @@
         <div class="row">
             <!-- Post Container -->
             <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
-                <h1 id="2024-3-6"><a href="#2024-3-6" class="headerlink" title="2024.3.6"></a>2024.3.6</h1><p>阅读文献，为第二天与指导老师讨论做准备</p>
-<h1 id="《面向工业园区的综合能源系统协同规划方法研究综述》"><a href="#《面向工业园区的综合能源系统协同规划方法研究综述》" class="headerlink" title="《面向工业园区的综合能源系统协同规划方法研究综述》"></a>《面向工业园区的综合能源系统协同规划方法研究综述》</h1><h2 id="1-综合能源系统的架构"><a href="#1-综合能源系统的架构" class="headerlink" title="1 综合能源系统的架构"></a>1 综合能源系统的架构</h2><ul>
+                <h1 id="面向工业园区的综合能源系统协同规划方法研究综述"><a class="markdownIt-Anchor" href="#面向工业园区的综合能源系统协同规划方法研究综述"></a> 《面向工业园区的综合能源系统协同规划方法研究综述》</h1>
+<h2 id="1-综合能源系统的架构"><a class="markdownIt-Anchor" href="#1-综合能源系统的架构"></a> 1 综合能源系统的架构</h2>
+<ul>
 <li>三大基础能量单元：电、热、气</li>
 <li>新能源：风电、光伏</li>
-<li>能量耦合单元:<br>冷热电三联供系统CCHP<br>热电联产系统CHP<br>电锅炉<br>燃气炉</li>
+<li>能量耦合单元:<br>
+冷热电三联供系统CCHP<br>
+热电联产系统CHP<br>
+电锅炉<br>
+燃气炉</li>
 <li>能量存储单元:储能设备</li>
 </ul>
 <p><img src="image.png" alt="alt text"></p>
-<h2 id="2-规划步骤"><a href="#2-规划步骤" class="headerlink" title="2 规划步骤"></a>2 规划步骤</h2><p>1）分析工业园区现状：政策法规、建筑面积、人口数量…<br>2）分析供能侧出力特性：供能侧主要以风电、光伏等新能源电源点出力以及与工业园区配电网的交互功率为主。考虑时间、温度、电价等多重因素下的出力特点及约束条件<br>3）<strong>预测工业园区负荷侧的用能特性</strong>：依照步骤1）的相关信息，结合人工智能等负荷预测方法，实现对当前园区电、热、气、冷等负荷需求的预测<br>4）<strong>建立综合能源系统耦合模型</strong>：的多能耦合设备数学模型，反映出电&#x2F;热&#x2F;气&#x2F;冷四种能流的耦合关系，并通过数学耦合矩阵的形式反映多能流的输入与输出关系<br>5）规划方案：确定选址、确定输入输出关系模型</p>
-<h2 id="3-多能耦合单元建模"><a href="#3-多能耦合单元建模" class="headerlink" title="3 多能耦合单元建模"></a>3 多能耦合单元建模</h2><h3 id="3-1-EH模型"><a href="#3-1-EH模型" class="headerlink" title="3.1 EH模型"></a>3.1 EH模型</h3><p>[文献28](http: &#x2F;&#x2F;www. gridlabd. org&#x2F;. “GridLAB-D”)</p>
+<h2 id="2-规划步骤"><a class="markdownIt-Anchor" href="#2-规划步骤"></a> 2 规划步骤</h2>
+<p>1）分析工业园区现状：政策法规、建筑面积、人口数量…<br>
+2）分析供能侧出力特性：供能侧主要以风电、光伏等新能源电源点出力以及与工业园区配电网的交互功率为主。考虑时间、温度、电价等多重因素下的出力特点及约束条件<br>
+3）<strong>预测工业园区负荷侧的用能特性</strong>：依照步骤1）的相关信息，结合人工智能等负荷预测方法，实现对当前园区电、热、气、冷等负荷需求的预测<br>
+4）<strong>建立综合能源系统耦合模型</strong>：的多能耦合设备数学模型，反映出电/热/气/冷四种能流的耦合关系，并通过数学耦合矩阵的形式反映多能流的输入与输出关系<br>
+5）规划方案：确定选址、确定输入输出关系模型</p>
+<h2 id="3-多能耦合单元建模"><a class="markdownIt-Anchor" href="#3-多能耦合单元建模"></a> 3 多能耦合单元建模</h2>
+<h3 id="31-eh模型"><a class="markdownIt-Anchor" href="#31-eh模型"></a> 3.1 EH模型</h3>
+<p>[文献28](http: //www. gridlabd. org/. “GridLAB-D”)</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">W = CY</span><br></pre></td></tr></table></figure>
 <p>表征电 热 气转换存储与耦合关系</p>
-<h3 id="3-2-CCHP模型"><a href="#3-2-CCHP模型" class="headerlink" title="3.2 CCHP模型"></a>3.2 CCHP模型</h3><p>是基于冷—热—电三联供的多能耦合联产系统<br>主要以燃气轮机进行发电，以溴化锂吸收式制冷机进行制冷，以余热锅炉进行供热</p>
-<h3 id="3-3-CHP模型"><a href="#3-3-CHP模型" class="headerlink" title="3.3 CHP模型"></a>3.3 CHP模型</h3><p>即热电联产系统<br>CHP系统利用气体在高温燃烧室产生的高品位热量驱动微燃机发电，以满足电负荷需求求；在此过程中产生的中低品位热量进入到余热锅炉，以满足热负荷需求</p>
-<h2 id="4-协同规划模型"><a href="#4-协同规划模型" class="headerlink" title="4 协同规划模型"></a>4 协同规划模型</h2><h3 id="4-1-目标函数"><a href="#4-1-目标函数" class="headerlink" title="4.1 目标函数"></a>4.1 目标函数</h3><h4 id="4-1-1-考虑能量短缺成本"><a href="#4-1-1-考虑能量短缺成本" class="headerlink" title="4.1.1 考虑能量短缺成本"></a>4.1.1 考虑能量短缺成本</h4><p>规划年限:在制定各类规划时，设定的一个预期完成或适用的时间段<br>折现率:</p>
-<h4 id="4-1-2-计及需求侧管理"><a href="#4-1-2-计及需求侧管理" class="headerlink" title="4.1.2 计及需求侧管理"></a>4.1.2 计及需求侧管理</h4><p>考虑了电力系统需求侧管理对综合能源系统协同规划的影响，其核心理念是通过用户侧引导，改变传统用电负荷特性，从而削峰填谷延缓投资，降低成本</p>
-<h4 id="4-1-3-考虑热网"><a href="#4-1-3-考虑热网" class="headerlink" title="4.1.3 考虑热网"></a>4.1.3 考虑热网</h4><h4 id="4-1-4-考虑弃风弃光惩罚"><a href="#4-1-4-考虑弃风弃光惩罚" class="headerlink" title="4.1.4 考虑弃风弃光惩罚"></a>4.1.4 考虑弃风弃光惩罚</h4><h4 id="4-1-5-考虑Pareto理论的多目标协同规划"><a href="#4-1-5-考虑Pareto理论的多目标协同规划" class="headerlink" title="4.1.5 考虑Pareto理论的多目标协同规划"></a>4.1.5 考虑Pareto理论的多目标协同规划</h4><h3 id="4-2-约束条件"><a href="#4-2-约束条件" class="headerlink" title="4.2 约束条件"></a>4.2 约束条件</h3><h4 id="4-2-1-等式约束"><a href="#4-2-1-等式约束" class="headerlink" title="4.2.1 等式约束"></a>4.2.1 等式约束</h4><ul>
+<h3 id="32-cchp模型"><a class="markdownIt-Anchor" href="#32-cchp模型"></a> 3.2 CCHP模型</h3>
+<p>是基于冷—热—电三联供的多能耦合联产系统<br>
+主要以燃气轮机进行发电，以溴化锂吸收式制冷机进行制冷，以余热锅炉进行供热</p>
+<h3 id="33-chp模型"><a class="markdownIt-Anchor" href="#33-chp模型"></a> 3.3 CHP模型</h3>
+<p>即热电联产系统<br>
+CHP系统利用气体在高温燃烧室产生的高品位热量驱动微燃机发电，以满足电负荷需求求；在此过程中产生的中低品位热量进入到余热锅炉，以满足热负荷需求</p>
+<h2 id="4-协同规划模型"><a class="markdownIt-Anchor" href="#4-协同规划模型"></a> 4 协同规划模型</h2>
+<h3 id="41-目标函数"><a class="markdownIt-Anchor" href="#41-目标函数"></a> 4.1 目标函数</h3>
+<h4 id="411-考虑能量短缺成本"><a class="markdownIt-Anchor" href="#411-考虑能量短缺成本"></a> 4.1.1 考虑能量短缺成本</h4>
+<p>规划年限:在制定各类规划时，设定的一个预期完成或适用的时间段<br>
+折现率:</p>
+<h4 id="412-计及需求侧管理"><a class="markdownIt-Anchor" href="#412-计及需求侧管理"></a> 4.1.2 计及需求侧管理</h4>
+<p>考虑了电力系统需求侧管理对综合能源系统协同规划的影响，其核心理念是通过用户侧引导，改变传统用电负荷特性，从而削峰填谷延缓投资，降低成本</p>
+<h4 id="413-考虑热网"><a class="markdownIt-Anchor" href="#413-考虑热网"></a> 4.1.3 考虑热网</h4>
+<h4 id="414-考虑弃风弃光惩罚"><a class="markdownIt-Anchor" href="#414-考虑弃风弃光惩罚"></a> 4.1.4 考虑弃风弃光惩罚</h4>
+<h4 id="415-考虑pareto理论的多目标协同规划"><a class="markdownIt-Anchor" href="#415-考虑pareto理论的多目标协同规划"></a> 4.1.5 考虑Pareto理论的多目标协同规划</h4>
+<h3 id="42-约束条件"><a class="markdownIt-Anchor" href="#42-约束条件"></a> 4.2 约束条件</h3>
+<h4 id="421-等式约束"><a class="markdownIt-Anchor" href="#421-等式约束"></a> 4.2.1 等式约束</h4>
+<ul>
 <li>电网实时功率平衡</li>
 <li>气负荷平衡</li>
 <li>热负荷平衡</li>
 </ul>
-<h4 id="4-2-2-不等式约束"><a href="#4-2-2-不等式约束" class="headerlink" title="4.2.2 不等式约束"></a>4.2.2 不等式约束</h4><ul>
+<h4 id="422-不等式约束"><a class="markdownIt-Anchor" href="#422-不等式约束"></a> 4.2.2 不等式约束</h4>
+<ul>
 <li>电压波动范围</li>
 <li>线路电流限制</li>
 <li>天然气气源点</li>
@@ -221,17 +250,23 @@
 <li>对各能流生产运行环节、新能源消纳率、能源利用率、耦合设备的动态运行成本、净现值、内部收益率、投资回报年限等专业数据还缺乏深入研究</li>
 <li>将储能站的选址定容、充放策略与实际安全运行情况及要求相结合</li>
 <li>考虑运行调控环节的两阶段协同规划方法[文献23],采用两阶段规划方法，先规划出一个合理的初始解，再对解进行优化，以达到最优解</li>
-<li>综合能源系统规划建设与运行调控的耦合程度还不够紧密 </li>
+<li>综合能源系统规划建设与运行调控的耦合程度还不够紧密</li>
 <li>不确定性问题</li>
 </ol>
-<h1 id="能源互联网方法——统一能路法"><a href="#能源互联网方法——统一能路法" class="headerlink" title="能源互联网方法——统一能路法"></a>能源互联网方法——统一能路法</h1><p>电路理论为基础<br>通过类比得到气路、热路、水路<br>统一能路法可以类比计算潮流，从而对于规划提供参考<br>（可以结合<u>两阶段法</u>：先优化综合能源系统的多能耦合设备类型及容量，再确定运行成本最小的方案）</p>
+<h1 id="能源互联网方法统一能路法"><a class="markdownIt-Anchor" href="#能源互联网方法统一能路法"></a> 能源互联网方法——统一能路法</h1>
+<p>电路理论为基础<br>
+通过类比得到气路、热路、水路<br>
+统一能路法可以类比计算潮流，从而对于规划提供参考<br>
+（可以结合<u>两阶段法</u>：先优化综合能源系统的多能耦合设备类型及容量，再确定运行成本最小的方案）</p>
 <p>一个想法：</p>
 <ol>
 <li>优化出设备类型与数量</li>
 <li>按照完全图计算保证一定裕度下统一能路潮流（稳态）</li>
-<li>将低负荷的节点逐一删去，重新计算潮流，直到达到线路的最大流，得到一个最小的统一能路图就是最优规划<br>主要考虑能量的流动<br>潜在问题：热存在惯性<br>模糊的处理方法：概率密度函数，求期望最大为目标函数</li>
+<li>将低负荷的节点逐一删去，重新计算潮流，直到达到线路的最大流，得到一个最小的统一能路图就是最优规划<br>
+主要考虑能量的流动<br>
+潜在问题：热存在惯性<br>
+模糊的处理方法：概率密度函数，求期望最大为目标函数</li>
 </ol>
-<p>和老师沟通后考虑做人工智能相关问题，与学长联系了一下，将有学长考虑具体的课题</p>
 
                 <hr>
                 
@@ -246,7 +281,7 @@
                     
                     <li class="next">
                         <a href="/2024/03/06/嵌入式智能系统学习/" data-toggle="tooltip" data-placement="top"
-                           title="嵌入式智能系统学习">Next Post &rarr;</a>
+                           title="微机原理随笔">Next Post &rarr;</a>
                     </li>
                     
                 </ul>
@@ -265,7 +300,7 @@
 
             <div class="hidden-xs col-sm-3 toc-col">
                 <div class="toc-wrap">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#2024-3-6"><span class="toc-text">2024.3.6</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E3%80%8A%E9%9D%A2%E5%90%91%E5%B7%A5%E4%B8%9A%E5%9B%AD%E5%8C%BA%E7%9A%84%E7%BB%BC%E5%90%88%E8%83%BD%E6%BA%90%E7%B3%BB%E7%BB%9F%E5%8D%8F%E5%90%8C%E8%A7%84%E5%88%92%E6%96%B9%E6%B3%95%E7%A0%94%E7%A9%B6%E7%BB%BC%E8%BF%B0%E3%80%8B"><span class="toc-text">《面向工业园区的综合能源系统协同规划方法研究综述》</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E7%BB%BC%E5%90%88%E8%83%BD%E6%BA%90%E7%B3%BB%E7%BB%9F%E7%9A%84%E6%9E%B6%E6%9E%84"><span class="toc-text">1 综合能源系统的架构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E8%A7%84%E5%88%92%E6%AD%A5%E9%AA%A4"><span class="toc-text">2 规划步骤</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E5%A4%9A%E8%83%BD%E8%80%A6%E5%90%88%E5%8D%95%E5%85%83%E5%BB%BA%E6%A8%A1"><span class="toc-text">3 多能耦合单元建模</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-EH%E6%A8%A1%E5%9E%8B"><span class="toc-text">3.1 EH模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-CCHP%E6%A8%A1%E5%9E%8B"><span class="toc-text">3.2 CCHP模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-CHP%E6%A8%A1%E5%9E%8B"><span class="toc-text">3.3 CHP模型</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E5%8D%8F%E5%90%8C%E8%A7%84%E5%88%92%E6%A8%A1%E5%9E%8B"><span class="toc-text">4 协同规划模型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-%E7%9B%AE%E6%A0%87%E5%87%BD%E6%95%B0"><span class="toc-text">4.1 目标函数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#4-1-1-%E8%80%83%E8%99%91%E8%83%BD%E9%87%8F%E7%9F%AD%E7%BC%BA%E6%88%90%E6%9C%AC"><span class="toc-text">4.1.1 考虑能量短缺成本</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-1-2-%E8%AE%A1%E5%8F%8A%E9%9C%80%E6%B1%82%E4%BE%A7%E7%AE%A1%E7%90%86"><span class="toc-text">4.1.2 计及需求侧管理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-1-3-%E8%80%83%E8%99%91%E7%83%AD%E7%BD%91"><span class="toc-text">4.1.3 考虑热网</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-1-4-%E8%80%83%E8%99%91%E5%BC%83%E9%A3%8E%E5%BC%83%E5%85%89%E6%83%A9%E7%BD%9A"><span class="toc-text">4.1.4 考虑弃风弃光惩罚</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-1-5-%E8%80%83%E8%99%91Pareto%E7%90%86%E8%AE%BA%E7%9A%84%E5%A4%9A%E7%9B%AE%E6%A0%87%E5%8D%8F%E5%90%8C%E8%A7%84%E5%88%92"><span class="toc-text">4.1.5 考虑Pareto理论的多目标协同规划</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-%E7%BA%A6%E6%9D%9F%E6%9D%A1%E4%BB%B6"><span class="toc-text">4.2 约束条件</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#4-2-1-%E7%AD%89%E5%BC%8F%E7%BA%A6%E6%9D%9F"><span class="toc-text">4.2.1 等式约束</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-2-2-%E4%B8%8D%E7%AD%89%E5%BC%8F%E7%BA%A6%E6%9D%9F"><span class="toc-text">4.2.2 不等式约束</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%83%BD%E6%BA%90%E4%BA%92%E8%81%94%E7%BD%91%E6%96%B9%E6%B3%95%E2%80%94%E2%80%94%E7%BB%9F%E4%B8%80%E8%83%BD%E8%B7%AF%E6%B3%95"><span class="toc-text">能源互联网方法——统一能路法</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%9D%A2%E5%90%91%E5%B7%A5%E4%B8%9A%E5%9B%AD%E5%8C%BA%E7%9A%84%E7%BB%BC%E5%90%88%E8%83%BD%E6%BA%90%E7%B3%BB%E7%BB%9F%E5%8D%8F%E5%90%8C%E8%A7%84%E5%88%92%E6%96%B9%E6%B3%95%E7%A0%94%E7%A9%B6%E7%BB%BC%E8%BF%B0"><span class="toc-text"> 《面向工业园区的综合能源系统协同规划方法研究综述》</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E7%BB%BC%E5%90%88%E8%83%BD%E6%BA%90%E7%B3%BB%E7%BB%9F%E7%9A%84%E6%9E%B6%E6%9E%84"><span class="toc-text"> 1 综合能源系统的架构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E8%A7%84%E5%88%92%E6%AD%A5%E9%AA%A4"><span class="toc-text"> 2 规划步骤</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E5%A4%9A%E8%83%BD%E8%80%A6%E5%90%88%E5%8D%95%E5%85%83%E5%BB%BA%E6%A8%A1"><span class="toc-text"> 3 多能耦合单元建模</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#31-eh%E6%A8%A1%E5%9E%8B"><span class="toc-text"> 3.1 EH模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#32-cchp%E6%A8%A1%E5%9E%8B"><span class="toc-text"> 3.2 CCHP模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#33-chp%E6%A8%A1%E5%9E%8B"><span class="toc-text"> 3.3 CHP模型</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E5%8D%8F%E5%90%8C%E8%A7%84%E5%88%92%E6%A8%A1%E5%9E%8B"><span class="toc-text"> 4 协同规划模型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#41-%E7%9B%AE%E6%A0%87%E5%87%BD%E6%95%B0"><span class="toc-text"> 4.1 目标函数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#411-%E8%80%83%E8%99%91%E8%83%BD%E9%87%8F%E7%9F%AD%E7%BC%BA%E6%88%90%E6%9C%AC"><span class="toc-text"> 4.1.1 考虑能量短缺成本</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#412-%E8%AE%A1%E5%8F%8A%E9%9C%80%E6%B1%82%E4%BE%A7%E7%AE%A1%E7%90%86"><span class="toc-text"> 4.1.2 计及需求侧管理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#413-%E8%80%83%E8%99%91%E7%83%AD%E7%BD%91"><span class="toc-text"> 4.1.3 考虑热网</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#414-%E8%80%83%E8%99%91%E5%BC%83%E9%A3%8E%E5%BC%83%E5%85%89%E6%83%A9%E7%BD%9A"><span class="toc-text"> 4.1.4 考虑弃风弃光惩罚</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#415-%E8%80%83%E8%99%91pareto%E7%90%86%E8%AE%BA%E7%9A%84%E5%A4%9A%E7%9B%AE%E6%A0%87%E5%8D%8F%E5%90%8C%E8%A7%84%E5%88%92"><span class="toc-text"> 4.1.5 考虑Pareto理论的多目标协同规划</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#42-%E7%BA%A6%E6%9D%9F%E6%9D%A1%E4%BB%B6"><span class="toc-text"> 4.2 约束条件</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#421-%E7%AD%89%E5%BC%8F%E7%BA%A6%E6%9D%9F"><span class="toc-text"> 4.2.1 等式约束</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#422-%E4%B8%8D%E7%AD%89%E5%BC%8F%E7%BA%A6%E6%9D%9F"><span class="toc-text"> 4.2.2 不等式约束</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%83%BD%E6%BA%90%E4%BA%92%E8%81%94%E7%BD%91%E6%96%B9%E6%B3%95%E7%BB%9F%E4%B8%80%E8%83%BD%E8%B7%AF%E6%B3%95"><span class="toc-text"> 能源互联网方法——统一能路法</span></a></li></ol>
                 </div>
             </div>
         </div>
