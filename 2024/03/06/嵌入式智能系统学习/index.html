@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="x5-fullscreen" content="true">
+<meta name="full-screen" content="yes">
+<meta name="theme-color" content="#317EFB" />
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=0" name="viewport">
+<meta name="description" content="0 前言 本学期开了一门计算机专业的选修课，却是我们专业的必修课，即————嵌入式智能系统。这门课应该是综合之前多门计算机专业必修课的内容 包含：计算机组成原理、汇编语言等等。本人作为非计算机专业的同学，上这门课也是非常汗颜。因此决定把个人学习的过程记录下来。一方面是学习，另一方面是作为一个宝贵的形式保存下来。 本博客采用清华大学出版社的《嵌入式系统原理与应用》这本书位主要参考，作者是常华、黄岚">
+<meta property="og:type" content="article">
+<meta property="og:title" content="微机原理随笔">
+<meta property="og:url" content="https://librariaboy.github.io/2024/03/06/%E5%B5%8C%E5%85%A5%E5%BC%8F%E6%99%BA%E8%83%BD%E7%B3%BB%E7%BB%9F%E5%AD%A6%E4%B9%A0/index.html">
+<meta property="og:site_name" content="librariaBoy">
+<meta property="og:description" content="0 前言 本学期开了一门计算机专业的选修课，却是我们专业的必修课，即————嵌入式智能系统。这门课应该是综合之前多门计算机专业必修课的内容 包含：计算机组成原理、汇编语言等等。本人作为非计算机专业的同学，上这门课也是非常汗颜。因此决定把个人学习的过程记录下来。一方面是学习，另一方面是作为一个宝贵的形式保存下来。 本博客采用清华大学出版社的《嵌入式系统原理与应用》这本书位主要参考，作者是常华、黄岚">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://librariaboy.github.io/img/404.jpg">
+<meta property="og:image" content="https://librariaboy.github.io/img/404.jpg">
+<meta property="article:published_time" content="2024-03-06T03:07:08.000Z">
+<meta property="article:modified_time" content="2025-03-26T08:35:49.240Z">
+<meta property="article:author" content="Ethan Wang">
+<meta property="article:tag" content="Study">
+<meta property="article:tag" content="Embedded System">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://librariaboy.github.io/img/404.jpg">
+
+
+<title >微机原理随笔</title>
+
+<!-- Favicon -->
+
+    <link href='/img/favicon.svg?v=2.2.5' rel='icon' type='image/png' sizes='16x16' ></link>
+
+
+    <link href='/img/favicon.svg?v=2.2.5' rel='icon' type='image/png' sizes='32x32' ></link>
+
+
+
+
+<!-- Plugin -->
+
+
+
+
+    
+<link rel="stylesheet" href="/css/plugins/bootstrap.row.css">
+
+    
+<link rel="stylesheet" href="https://unpkg.com/@fancyapps/ui@4.0/dist/fancybox.css">
+
+    
+    
+
+
+
+
+<!-- Icon -->
+
+    
+<link rel="stylesheet" href="/css/plugins/font-awesome.min.css">
+
+
+
+
+<!-- Variable -->
+<script>window.ASYNC_CONFIG = {"hostname":"librariaboy.github.io","author":"Ethan Wang","root":"/","typed_text":null,"theme_version":"2.2.5","theme":{"switch":true,"default":"style-light"},"favicon":{"logo":"/img/favicon.svg","icon16":"/img/favicon.svg","icon32":"/img/favicon.svg","apple_touch_icon":null,"webmanifest":null,"visibilitychange":false,"hidden":"/failure.ico","show_text":"(/≧▽≦/)咦！又好了！","hide_text":"(●—●)喔哟，崩溃啦！"},"i18n":{"placeholder":"搜索文章...","empty":"找不到您查询的内容: ${query}","hits":"找到 ${hits} 条结果","hits_time":"找到 ${hits} 条结果（用时 ${time} 毫秒）","author":"本文作者：","copyright_link":"本文链接：","copyright_license_title":"版权声明：","copyright_license_content":"本博客所有文章除特别声明外，均默认采用 undefined 许可协议。","copy_success":"复制成功","copy_failure":"复制失败","open_read_mode":"进入阅读模式","exit_read_mode":"退出阅读模式","notice_outdate_message":"距离上次更新已经 undefined 天了, 文章内容可能已经过时。","sticky":"置顶","just":"刚刚","min":"分钟前","hour":"小时前","day":"天前","month":"个月前"},"swup":false,"plugin":{"flickr_justified_gallery":"https://unpkg.com/flickr-justified-gallery@latest/dist/fjGallery.min.js"},"icons":{"sun":"far fa-sun","moon":"far fa-moon","play":"fas fa-play","email":"far fa-envelope","next":"fas fa-arrow-right","calendar":"far fa-calendar-alt","clock":"far fa-clock","user":"far fa-user","back_top":"fas fa-arrow-up","close":"fas fa-times","search":"fas fa-search","reward":"fas fa-hand-holding-usd","toc_tag":"fas fa-th-list","read":"fas fa-book-reader","arrows":"fas fa-arrows-alt-h","double_arrows":"fas fa-angle-double-down","copy":"fas fa-copy"},"icontype":"font","highlight":{"plugin":"highlighjs","theme":true,"copy":true,"lang":true,"title":"default","height_limit":false},"toc":{"post_title":true},"live_time":{"start_time":"","prefix":"博客已萌萌哒运行 undefined 天"},"danmu":{"enable":false,"el":".trm-banner"}};</script>
+<script id="async-page-config">window.PAGE_CONFIG = {"isPost":true,"isHome":false,"postUpdate":"2025-03-26 16:35:49"};</script>
+
+<!-- Theme mode css -->
+<link data-swup-theme rel="stylesheet" href="/css/index.css?v=2.2.5" id="trm-switch-style">
+<script>
+    let defaultMode = ASYNC_CONFIG.theme.default !=='auto' ?  ASYNC_CONFIG.theme.default : (window.matchMedia("(prefers-color-scheme: light)").matches ? 'style-light' : 'style-dark')
+    let catchMode = localStorage.getItem('theme-mode') || defaultMode;
+    let type = catchMode === 'style-dark' ? 'add' : 'remove';
+    document.documentElement.classList[type]('dark')
+</script>
+
+<!-- CDN -->
+
+
+    
+    
+
+
+
+<!-- Site Analytics -->
+
+ 
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.1.1"></head>
+
+<body>
+
+  <!-- app wrapper -->
+  <div class="trm-app-frame">
+
+    <!-- page preloader -->
+    <div class="trm-preloader">
+    <div class="trm-holder">
+        <div class="preloader">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+</div>
+    <!-- page preloader end -->
+
+    <!-- change mode preloader -->
+    <div class="trm-mode-swich-animation-frame">
+    <div class="trm-mode-swich-animation">
+        <i class="i-sun"><i class="iconfont far fa-sun"></i></i>
+        <div class="trm-horizon"></div>
+        <i class="i-moon"><i class="iconfont far fa-moon"></i></i>
+    </div>
+</div>
+    <!-- change mode preloader end -->
+
+      <!-- scroll container -->
+      <div id="trm-dynamic-content" class="trm-swup-animation">
+        <div id="trm-scroll-container" class="trm-scroll-container" style="opacity: 0">
+            <!-- top bar -->
+            <header class="trm-top-bar">
+	<div class="container">
+		<div class="trm-left-side">
+			<!-- logo -->
+<a href="/" class="trm-logo-frame trm-anima-link">
+    
+        <img alt="logo" src="/img/favicon.svg">
+    
+    
+        <div class="trm-logo-text">
+            Wang<span>Ethan</span>
+        </div>
+    
+</a>
+<!-- logo end -->
+		</div>
+		<div class="trm-right-side">
+			<!-- menu -->
+<div class="trm-menu">
+    <nav>
+        <ul>
+            
+            <li class="menu-item-has-children ">
+                <a  href="/" target="">
+                    home
+                </a>
+                
+            </li>
+            
+            <li class="menu-item-has-children ">
+                <a  href="/archives/" target="">
+                    archives
+                </a>
+                
+                <ul>
+                    
+                    <li>
+                        <a  href="/categories/%E7%94%B5%E5%8A%9B%E7%94%B5%E5%AD%90/" target="">
+                            电力电子
+                        </a>
+                    </li>
+                    
+                </ul>
+                
+            </li>
+            
+            <li class="menu-item-has-children ">
+                <a data-no-swup href="/about/" target="">
+                    about
+                </a>
+                
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+<!-- menu end -->
+			
+    <!-- mode switcher place -->
+    <div class="trm-mode-switcher-place">
+        <div class="trm-mode-switcher">
+            <i class="iconfont far fa-sun"></i>
+            <input class="tgl tgl-light" id="trm-swich" type="checkbox">
+            <label class="trm-swich" for="trm-swich"></label>
+            <i class="iconfont far fa-moon"></i>
+        </div>
+    </div>
+    <!-- mode switcher place end -->
+
+			
+		</div>
+		<div class="trm-menu-btn">
+			<span></span>
+		</div>
+	</div>
+</header>
+            <!-- top bar end -->
+
+            <!-- body -->
+            
+<div class="trm-content-start">
+    <!-- banner -->
+    <div class="trm-banner">
+    
+    <!-- banner cover -->
+    <img style="object-position:top;object-fit:cover;" alt="banner" class="trm-banner-cover" src="/img/banner.png">
+    <!-- banner cover end -->
+    
+
+    <!-- banner content -->
+    <div class="trm-banner-content trm-overlay">
+        <div class="container">
+            <div class="row">
+                
+                <div class="col-lg-4"></div>
+                
+                <div class="col-lg-8">
+
+                    <!-- banner title -->
+                    <div class="trm-banner-text ">
+                        <div class="trm-label trm-mb-20">
+                            NEWS LETTER
+                        </div>
+                        <h1 class="trm-mb-30 trm-hsmb-font">
+                            微机原理随笔
+                        </h1>
+
+                        
+                            <ul class="trm-breadcrumbs trm-label">
+                                <li>
+                                    <a href="/" class="trm-anima-link">Home</a>
+                                </li>
+                                <li>
+                                    <span>
+                                        2024
+                                    </span>
+                                </li>
+                            </ul>
+                        
+                    </div>
+                    <!-- banner title end -->
+
+                    <!-- scroll hint -->
+                    <span id="scroll-triger" class="trm-scroll-hint-frame">
+                        <div class="trm-scroll-hint"></div>
+                        <span class="trm-label">Scroll down</span>
+                    </span>
+                    <!-- scroll hint end -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- banner content end -->
+</div>
+    <!-- banner end -->
+    <div class="container">
+        <div class="row">
+            
+                <div class="trm-page-sidebar col-lg-4 hidden-sm">
+                    <!-- main card -->
+                    <div class="trm-main-card-frame trm-sidebar">
+    <div class="trm-main-card"> 
+        <!-- card header -->
+<div class="trm-mc-header">
+    <div class="trm-avatar-frame trm-mb-20">
+        <img alt="Avatar" class="trm-avatar" src="https://s2.loli.net/2024/03/06/cASjJMv5NpPWqbE.jpg">
+    </div>
+    <h5 class="trm-name trm-mb-15">
+        LibrariaBoy
+    </h5>
+    
+</div>
+<!-- card header end -->
+        <!-- sidebar social -->
+
+<!-- sidebar social end -->
+        <!-- info -->
+<div class="trm-divider trm-mb-40 trm-mt-40"></div>
+<ul class="trm-table trm-mb-20">
+    
+        <li>
+            <div class="trm-label">
+                姓名:
+            </div>
+            <div class="trm-label trm-label-light">
+                Ethan Wang
+            </div>
+        </li>
+    
+        <li>
+            <div class="trm-label">
+                本科专业:
+            </div>
+            <div class="trm-label trm-label-light">
+                储能科学与工程(储能系统)
+            </div>
+        </li>
+    
+        <li>
+            <div class="trm-label">
+                研究生专业：:
+            </div>
+            <div class="trm-label trm-label-light">
+                控制科学与工程
+            </div>
+        </li>
+    
+        <li>
+            <div class="trm-label">
+                电子邮件:
+            </div>
+            <div class="trm-label trm-label-light">
+                wangyinshen@163.com
+            </div>
+        </li>
+    
+</ul>
+<!-- info end -->
+
+        
+    <div class="trm-divider trm-mb-40 trm-mt-40"></div>
+    <!-- action button -->
+    <div class="text-center">
+        <a href="mailto:wangyinshen@163.com" class="trm-btn">
+            联系我
+            <i class="iconfont far fa-envelope"></i>
+        </a>
+    </div>
+    <!-- action button end -->
+
+    </div>
+</div>
+                    <!-- main card end -->
+                </div>
+            
+            <div class="trm-page-content col-lg-8">
+                <div id="trm-content" class="trm-content">
+                    <div class="trm-post-info row hidden-sm">
+    <div class="col-sm-4">
+        <div class="trm-card trm-label trm-label-light text-center">
+            <i class="iconfont far fa-calendar-alt trm-icon"></i><br>
+            03/06
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="trm-card trm-label trm-label-light text-center">
+            <i class="iconfont far fa-clock trm-icon"></i><br>
+            11:07
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div id="post-author" class="trm-card trm-label trm-label-light text-center">
+            <i class="iconfont far fa-user trm-icon"></i><br>
+            Ethan Wang
+        </div>
+    </div>
+</div>
+<div class="trm-card ">
+    <article id="article-container" class="trm-publication">
+    <h1 id="0-前言"><a class="markdownIt-Anchor" href="#0-前言"></a> 0 <strong>前言</strong></h1>
+<p>本学期开了一门计算机专业的选修课，却是我们专业的必修课，即————嵌入式智能系统。这门课应该是综合之前多门计算机专业必修课的内容 包含：计算机组成原理、汇编语言等等。本人作为非计算机专业的同学，上这门课也是非常汗颜。因此决定把个人学习的过程记录下来。一方面是学习，另一方面是作为一个宝贵的形式保存下来。<br>
+本博客采用清华大学出版社的《嵌入式系统原理与应用》这本书位主要参考，作者是常华、黄岚、张海燕。同时会尽量把补充的一些非计算机专业同学（比如我）没有学过的知识补充进来。</p>
+<p><img src="f8f2a026b040e8d45ceef6cd8e8dff2.jpg" alt="alt text"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<h1 id="1-微机原理相关补充知识"><a class="markdownIt-Anchor" href="#1-微机原理相关补充知识"></a> 1 微机原理相关补充知识</h1>
+<p>本章节记录我为学习嵌入式系统而补充自学的微机原理相关知识，参考课本为《微机原理与接口技术》，B站上西安电子科技大学的<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1ZJ411b7Na/?spm_id_from=333.1007.top_right_bar_window_custom_collection.content.click">课程</a>，非常值得推荐，大家可以配合课本结合起来观看</p>
+<h2 id="11-微机结构与工作原理"><a class="markdownIt-Anchor" href="#11-微机结构与工作原理"></a> 1.1 微机结构与工作原理</h2>
+<h3 id="111-经常用到的概念"><a class="markdownIt-Anchor" href="#111-经常用到的概念"></a> 1.1.1 经常用到的概念：</h3>
+<p>（1）微处理器：就是CPU，由运算器、寄存器、控制器及片内总线等构成<br>
+（2）位（bit）：二进制0、1，是计算机最小信息处理单位<br>
+（3）字节（byte）：8位，计算机（8086）最小存储单元<br>
+（4）字（word）：16位，计算机（8086）最小操作数单位，是2个字节<br>
+（5）字长（word length）：CPU一次可以处理的二进制数的位数<br>
+（6）指令系统：CPU所能执行的全部指令的合集，分为复杂指令系统（CISC）和精简指令系统（RISC），<u><em>ARM采用的是精 简指令系统（RISC）</em></u><br>
+（7）缓存：Cache Memory，是CPU的高速存储器，可以将常用数据存入，从而缩短CPU访问数据的时间</p>
+<h3 id="112-现代微机的总线结构"><a class="markdownIt-Anchor" href="#112-现代微机的总线结构"></a> 1.1.2 现代微机的总线结构</h3>
+<p>微机系统中的总线，按照传送信息的种类主要是：<br>
+1.数据总线（DB）：用于传送数据，双向<br>
+2.地址总线（AB）：用于传送地址，单向，由CPU发出<br>
+3.控制总线（CB）：用于传送控制信号，双向</p>
+<p>总线是传递信息的通道，CPU需要通过总线与外界联系</p>
+<h3 id="113-工作原理"><a class="markdownIt-Anchor" href="#113-工作原理"></a> 1.1.3 工作原理</h3>
+<p>1.实现既定任务指令序列<br>
+2.将程序存入随机存储器RAM或只读存储器ROM中<br>
+计算机按照如上两步按顺序完成所有指令就可以完成任务</p>
+<p>计算机执行一条指令的过程如下：<br>
+CPU从RAM中读取一条指令，然后将指令中的操作码和操作数送入运算器，运算器执行操作码所对应的运算，最后将运算结果送入CPU的寄存器，然后CPU根据指令中的控制信号，决定是否将结果送入存储器，从而完成一条指令的执行</p>
+<h2 id="12-微处理器的结构功能以8086cpu为例"><a class="markdownIt-Anchor" href="#12-微处理器的结构功能以8086cpu为例"></a> 1.2 微处理器的结构功能——以8086CPU为例</h2>
+<h3 id="121-cpu结构"><a class="markdownIt-Anchor" href="#121-cpu结构"></a> 1.2.1 CPU结构</h3>
+<p>CPU由4个部分组成：<br>
+（1）算数逻辑单元（ALU）：实现运算功能<br>
+（2）工作寄存器：可以暂存寻址信息和计算过程的中间结果<br>
+（3）I/O接口：与外设通信<br>
+（4）控制器：完成指令读入、寄存和译码，并产生通讯信号序列，是ALU完成特定操作。</p>
+<p>控制器的组成：<br>
+（1）<strong>程序计数器（PC）</strong>：用来存储<strong>下一条</strong>要执行的指令的地址<br>
+（2）指令寄存器（IR）：用来存储当前要执行的指令<br>
+（3）指令译码器（ID）：从存储器读入当前要执行的指令<br>
+（4）控制逻辑部件<br>
+（5）<strong>微处理器状态字（PSW）</strong>：寄存处理器当前状态<br>
+（6）堆栈指针（SP）：用来存储当前的堆栈地址</p>
+<h3 id="122-寄存器组织"><a class="markdownIt-Anchor" href="#122-寄存器组织"></a> 1.2.2 寄存器组织</h3>
+<p>8086CPU有14个<strong>16位寄存器</strong>，按功能分为8个通用寄存器，4个段寄存器和两个控制寄存器</p>
+<p>通用寄存器两种：<br>
+1.数据寄存器：AX，BX，CX，DX<br>
+这四个是16位数据寄存器，他们又可以按如下的方法分成8个8位寄存器：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">AX-&gt;AH,AL</span><br></pre></td></tr></table></figure>
+<p>2.地址寄存器：SI，DI，SP，BP<br>
+这四个寄存器主要提供16位段内偏移地址，由段寄存器提供段地址后，可以形成20位物理地址</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">物理地址 = 段地址x10H + 偏移地址</span><br></pre></td></tr></table></figure>
+<p>段寄存器：CS，DS，ES，SS<br>
+分别代表code,data,extra,stack segment</p>
+<p>控制寄存器：<br>
+(1)指令指针（IP）：也称为程序计数器（PC），保存下一条要执行的指令的段内偏移地址<br>
+(2)微处理器状态字（PSW）：用来存储CPU当前状态，由9个标志位：<br>
+状态标志：CF，PF，AF，ZF，SF，OF<br>
+分别代表<strong>进位标志</strong>，<strong>奇偶标志</strong>，<strong>辅助进位标志</strong>，<strong>零标志</strong>，<strong>符号标志</strong>（负数时为1），<strong>溢出标志</strong><br>
+控制标志DF，IF，TF<br>
+分别表示：方向、中断、陷阱标志</p>
+<h3 id="123-存储器"><a class="markdownIt-Anchor" href="#123-存储器"></a> 1.2.3 存储器</h3>
+<p>CPU一个总线周期内可以取一个字</p>
+<p>物理地址由<strong>段内地址</strong>和<strong>段内偏移地址</strong>两部分构成，段地址一般默认在对应的段寄存器中。<br>
+计算方法上文已经给出，物理地址也可以表示成逻辑地址的形式，例如0800H:0100H，其物理地址为08100H</p>
+<p>CPU通过四个段寄存器访问不同的段（当前段），来分类存储信息。存储器中的信息一般分为3大类，他们默认指定的段寄存器如下：<br>
+（1）程序段：CS<br>
+（2）数据段：DS，还可以附加ES<br>
+（3）堆栈段：SS<br>
+<u>如果指令没有指定则采用默认段寄存器</u></p>
+<h1 id="2-arm微处理器体系结构"><a class="markdownIt-Anchor" href="#2-arm微处理器体系结构"></a> 2 ARM微处理器体系结构</h1>
+<p>主要以ARM9为例进行学习</p>
+<h2 id="21-arm微处理器体系结构概览"><a class="markdownIt-Anchor" href="#21-arm微处理器体系结构概览"></a> 2.1 ARM微处理器体系结构概览</h2>
+<h3 id="211-risc指令集"><a class="markdownIt-Anchor" href="#211-risc指令集"></a> 2.1.1 RISC指令集</h3>
+<p>RISC指令集的特点：<br>
+1.仅选取使用<strong>频率最高</strong>的简单指令<br>
+2.<strong>指令长度固定</strong>，指令种类、寻址方式少<br>
+3.只有<strong>存数、取数</strong>指令访问存储器，其余均在寄存器内完成<br>
+4.采用<strong>流水线技术</strong>，大部分指令在一个指令周期内完成<br>
+5.<strong>多个通用寄存器</strong><br>
+6.<strong>组合逻辑</strong>控制<br>
+7.<strong>优化编译</strong></p>
+<h3 id="212-thumb指令集"><a class="markdownIt-Anchor" href="#212-thumb指令集"></a> 2.1.2 THUMB指令集</h3>
+<p>ARM微处理器增加了THUMB指令集，它是<strong>16位</strong>的指令集，是32位ARM指令集的子集，按16位重新编码，可以与ARM指令集一起使用。<u>提高了代码密度</u></p>
+<p>多出来一个THUMB指令集后，THUMB和ARM指令集之间的转换<br>
+引出了3个问题</p>
+<p>1.汇编程序如何汇编？<br>
+<strong>答</strong>：CODE16/CODE32切换指令集<br>
+2.如何取指令？<br>
+<strong>答</strong>：<br>
+3.<strong>如何执行指令?</strong><br>
+<strong>答</strong>：</p>
+<h3 id="213-arm指令流水线"><a class="markdownIt-Anchor" href="#213-arm指令流水线"></a> 2.1.3 ARM指令流水线</h3>
+<p><img src="%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202024-03-12%20163900.png" alt="alt text"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<ol>
+<li>流水线技术<br>
+流水线技术是指，将一个重复的时序过程，分解为若干个子过程，而每一个子过程都可以有效的在其专用功能段上与其他子过程同时执行。</li>
+<li>ARM9采用5级流水线设计<br>
+1） 预取<br>
+2） 译码<br>
+3） 执行<br>
+4） 访存<br>
+5） 写入</li>
+</ol>
+<ul>
+<li>优点：可以是处理器工作在更高的频率</li>
+<li>缺点：产生延时、某些段之间产生数据相关</li>
+</ul>
+
+</article>
+    
+    
+
+</div>
+<div class="trm-post-next-prev row">
+    <div class="col-lg-12">
+        <!-- title -->
+        <h5 class="trm-title-with-divider">
+            其他文章
+            <span data-number="02"></span>
+        </h5>
+    </div>
+    
+        <div class="col-lg-6">
+    <div class="trm-blog-card trm-scroll-animation">
+        <a href="/2024/03/06/%E7%BB%BC%E5%90%88%E8%83%BD%E6%BA%90%E7%B3%BB%E7%BB%9F%E9%9B%86%E6%88%90%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%8D%8F%E5%90%8C%E4%BC%98%E5%8C%96%E7%A0%94%E7%A9%B6/" class="trm-cover-frame trm-anima-link">
+            
+            
+                <img alt="cover" class="no-fancybox" src="/img/block.jpg">
+            
+        </a>
+        
+        <div class="trm-card-descr">
+            <div class="trm-label trm-category trm-mb-20">
+                <a href=" /categories/%E6%9C%AC%E7%A7%91/">
+                    本科
+                </a>
+            </div>
+            <h5>
+                <a href="/2024/03/06/%E7%BB%BC%E5%90%88%E8%83%BD%E6%BA%90%E7%B3%BB%E7%BB%9F%E9%9B%86%E6%88%90%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%8D%8F%E5%90%8C%E4%BC%98%E5%8C%96%E7%A0%94%E7%A9%B6/" class="trm-anima-link">
+                    综合能源系统集成设计与协同优化研究综述阅读
+                </a>
+            </h5>
+            <div class="trm-divider trm-mb-20 trm-mt-20"></div>
+            <ul class="trm-card-data trm-label">
+                <li>24/03/06</li>
+                <li>11:18</li>
+                
+                
+            </ul>
+        </div>
+    </div>
+</div>
+    
+    
+        <div class="col-lg-6">
+    <div class="trm-blog-card trm-scroll-animation">
+        <a href="/2024/03/05/hello-world/" class="trm-cover-frame trm-anima-link">
+            
+            
+                <img alt="cover" class="no-fancybox" src="/img/block.jpg">
+            
+        </a>
+        
+        <div class="trm-card-descr">
+            <div class="trm-label trm-category trm-mb-20">
+                <a href=" #.">
+                    未分类
+                </a>
+            </div>
+            <h5>
+                <a href="/2024/03/05/hello-world/" class="trm-anima-link">
+                    ABOUT ME
+                </a>
+            </h5>
+            <div class="trm-divider trm-mb-20 trm-mt-20"></div>
+            <ul class="trm-card-data trm-label">
+                <li>24/03/05</li>
+                <li>20:53</li>
+                
+                
+            </ul>
+        </div>
+    </div>
+</div>
+    
+</div>
+
+    
+
+
+
+                    <div class="trm-divider footer-divider"></div>
+
+                    <!-- footer -->
+                    <footer class="trm-footer-card trm-scroll-animation">
+
+    
+
+    
+
+    
+        <div class="trm-footer-item">
+            <span>
+                由 <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> 驱动 v7.1.1
+            </span>
+            <span class="footer-separator" data-separator=" | "></span>
+            <span> 
+                主题 - 
+                <a rel="noopener" href='https://github.com/MaLuns/hexo-theme-async' target='_blank'>Async</a>
+                v2.2.5
+            </span>
+        </div>
+      
+
+     
+
+     
+</footer>
+                    <!-- footer end -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+            <!-- body end -->
+
+            
+
+    <div id="post-toc" class="trm-post-toc">
+      <div class="trm-post-toc-header">
+        目录导航
+				<span id="post-toc-top">
+					置顶
+				</span>
+      </div>
+      <div class="trm-post-toc-content">
+        <ol class="trm-toc"><li class="trm-toc-item trm-toc-level-1" title=" 0 前言"><a rel="nofollow" class="trm-toc-link" href="#0-前言"><span class="trm-toc-number">1.</span> <span class="trm-toc-text"> 0 前言</span></a></li><li class="trm-toc-item trm-toc-level-1" title=" 1 微机原理相关补充知识"><a rel="nofollow" class="trm-toc-link" href="#1-微机原理相关补充知识"><span class="trm-toc-number">2.</span> <span class="trm-toc-text"> 1 微机原理相关补充知识</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-2" title=" 1.1 微机结构与工作原理"><a rel="nofollow" class="trm-toc-link" href="#11-微机结构与工作原理"><span class="trm-toc-number">2.1.</span> <span class="trm-toc-text"> 1.1 微机结构与工作原理</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-3" title=" 1.1.1 经常用到的概念："><a rel="nofollow" class="trm-toc-link" href="#111-经常用到的概念"><span class="trm-toc-number">2.1.1.</span> <span class="trm-toc-text"> 1.1.1 经常用到的概念：</span></a></li><li class="trm-toc-item trm-toc-level-3" title=" 1.1.2 现代微机的总线结构"><a rel="nofollow" class="trm-toc-link" href="#112-现代微机的总线结构"><span class="trm-toc-number">2.1.2.</span> <span class="trm-toc-text"> 1.1.2 现代微机的总线结构</span></a></li><li class="trm-toc-item trm-toc-level-3" title=" 1.1.3 工作原理"><a rel="nofollow" class="trm-toc-link" href="#113-工作原理"><span class="trm-toc-number">2.1.3.</span> <span class="trm-toc-text"> 1.1.3 工作原理</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-2" title=" 1.2 微处理器的结构功能——以8086CPU为例"><a rel="nofollow" class="trm-toc-link" href="#12-微处理器的结构功能以8086cpu为例"><span class="trm-toc-number">2.2.</span> <span class="trm-toc-text"> 1.2 微处理器的结构功能——以8086CPU为例</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-3" title=" 1.2.1 CPU结构"><a rel="nofollow" class="trm-toc-link" href="#121-cpu结构"><span class="trm-toc-number">2.2.1.</span> <span class="trm-toc-text"> 1.2.1 CPU结构</span></a></li><li class="trm-toc-item trm-toc-level-3" title=" 1.2.2 寄存器组织"><a rel="nofollow" class="trm-toc-link" href="#122-寄存器组织"><span class="trm-toc-number">2.2.2.</span> <span class="trm-toc-text"> 1.2.2 寄存器组织</span></a></li><li class="trm-toc-item trm-toc-level-3" title=" 1.2.3 存储器"><a rel="nofollow" class="trm-toc-link" href="#123-存储器"><span class="trm-toc-number">2.2.3.</span> <span class="trm-toc-text"> 1.2.3 存储器</span></a></li></ol></li></ol></li><li class="trm-toc-item trm-toc-level-1" title=" 2 ARM微处理器体系结构"><a rel="nofollow" class="trm-toc-link" href="#2-arm微处理器体系结构"><span class="trm-toc-number">3.</span> <span class="trm-toc-text"> 2 ARM微处理器体系结构</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-2" title=" 2.1 ARM微处理器体系结构概览"><a rel="nofollow" class="trm-toc-link" href="#21-arm微处理器体系结构概览"><span class="trm-toc-number">3.1.</span> <span class="trm-toc-text"> 2.1 ARM微处理器体系结构概览</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-3" title=" 2.1.1 RISC指令集"><a rel="nofollow" class="trm-toc-link" href="#211-risc指令集"><span class="trm-toc-number">3.1.1.</span> <span class="trm-toc-text"> 2.1.1 RISC指令集</span></a></li><li class="trm-toc-item trm-toc-level-3" title=" 2.1.2 THUMB指令集"><a rel="nofollow" class="trm-toc-link" href="#212-thumb指令集"><span class="trm-toc-number">3.1.2.</span> <span class="trm-toc-text"> 2.1.2 THUMB指令集</span></a></li><li class="trm-toc-item trm-toc-level-3" title=" 2.1.3 ARM指令流水线"><a rel="nofollow" class="trm-toc-link" href="#213-arm指令流水线"><span class="trm-toc-number">3.1.3.</span> <span class="trm-toc-text"> 2.1.3 ARM指令流水线</span></a></li></ol></li></ol></li></ol>
+      </div>
+    </div>
+
+            
+<div class="trm-fixed-container">
+    
+        <div class="trm-fixed-btn post-toc-btn" data-title="目录">
+            <i class="iconfont fas fa-th-list"></i>
+        </div>
+    
+    
+        <div class="trm-fixed-btn" data-title="阅读模式" onclick="asyncFun.switchReadMode()">
+            <i class="iconfont fas fa-book-reader"></i>
+        </div>
+    
+    
+    <div id="trm-back-top" class="trm-fixed-btn" data-title="回到顶部">
+        <i class="iconfont fas fa-arrow-up"></i>
+    </div>
+</div>
+        </div>
+      </div>
+      <!-- scroll container end -->
+  </div>
+  <!-- app wrapper end -->
+
+  
+  <!-- Plugin -->
+
+
+
+
+    
+    
+<script src="https://unpkg.com/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+
+    
+
+    
+
+    
+
+    <!-- 数学公式 -->
+    
+
+    <!-- 评论插件 -->
+    
+        
+
+        
+    
+
+		
+
+
+
+
+    <!-- Service Worker -->
+    
+    <!-- baidu push -->
+    
+
+
+<script id="async-script" src="/js/main.js?v=2.2.5"></script>
+
+<!-- CDN -->
+
+
+    
+
+    
+
+    
+
+
+
+</body>
+
+</html>
